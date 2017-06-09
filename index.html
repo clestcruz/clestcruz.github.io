@@ -21,9 +21,13 @@
     </head>
     <body>
 
-        <section class="full-width home-template">
+    <a id="facebook">Facebook</a>
 
-            <!-- Above the Fold -->
+
+
+<!--         <section class="full-width home-template">
+
+
 
             <div id="about-me" class="the-fold">
                 <div class="intro">
@@ -40,10 +44,9 @@
                 </div>
             </div>
 
-            <!-- End Above the Fold -->
+        
 
 
-            <!-- Featured Works -->
             <div id="featured-works" class="full-width featured-works">
                 <div class="container">
                     <div class="twelve columns intro">
@@ -82,21 +85,6 @@
                     </a>
                 </div>
 
-                <!--
-                <div class="post">
-                    <a href="http://federalland.ph/" target="_blank">
-                        <figure class="featured-image">
-                            <img src="images/federal-land-project-image.jpg" />
-                            <figcaption>
-                                <h3><span>Federal Land</span></h3>
-                                <span class="role">Web Development</span>
-                            </figcaption>
-                        </figure>
-                        <div class="overlay">
-                        </div>
-                    </a>
-                </div>
-                -->
 
                 <div class="post">
                     <a href="http://www.maruconsulting.com/" target="_blank">
@@ -127,46 +115,13 @@
                 </div>
               
 
-              
-                <!-- 
-                <div class="post">
-                    <a href="http://kidsforkids.org.ph/laro-ck/" target="_blank">
-                        <figure class="featured-image">
-                            <img src="images/laro-project-image.jpg" />
-                            <figcaption>
-                                <h3><span>Laro</span></h3>
-                                <span class="role">Web Development</span>
-                            </figcaption>
-                        </figure>
-                        <div class="overlay">
-                        </div>
-                    </a>
-                </div>
-
-                -->
-
-                <!--
-                <div class="post">
-                    <a href="http://barontravel.ph/" target="_blank">
-                        <figure class="featured-image">
-                            <img src="images/baron-travel-project-image.jpg" />
-                            <figcaption>
-                                <h3><span>Baron Travel</span></h3>
-                                <span class="role">Web Development</span>
-                            </figcaption>
-                        </figure>
-                        <div class="overlay">
-                        </div>
-                    </a>
-                </div>
-
-                -->
+      
 
             </div>
 
-            <!-- End Featured Works -->
 
-            <!-- Start Contact Me -->
+
+
             <div id="contact-me" class="full-width contact-me">
                 <div class="container intro">
                     <h2>Get in touch</h2>
@@ -178,10 +133,47 @@
                     </ul>
                 </div>
             </div>
-            <!-- End Contact Me -->
+
 
         </section>
+ -->
 
+        <script>
+            
+          var base_url           = window.location.origin,
+              hash_bang_facebook = "/#/sign-up?referral=",
+              referral_code      = document.getElementById('input-refcode').value;
+
+          // Production
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '1315017495219476',
+              xfbml      : true,
+              version    : 'v2.9'
+            });
+            FB.AppEvents.logPageView();
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+
+          $('#facebook').on('click', function() {
+
+              FB.ui({
+                method: 'share',
+                display: 'popup',
+                quote: 'Get Free Rides at Electric Studio! Sign up ' + base_url + hash_bang_facebook + referral_code + ' to purchase your first timer package! After your first ride, you get 1 ride on us!',
+                href: base_url + hash_bang_facebook;
+              }, function(response){});
+          });
+
+            
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
