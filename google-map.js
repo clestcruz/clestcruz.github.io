@@ -1,1 +1,1 @@
-document.getElementById("body").innerHTML = "<iframe allowfullscreen='' class='map' frameborder='0' src='https://www.google.com/maps/embed/v1/place?q=place_id:ChIJIUideQ7JlzMRrYc5w5uz3-w&amp;key=AIzaSyBEjmwyQE3AT9_JFXimNOvTlYVa9WSxgds' style='border:0'></iframe>";
+document.getElementsByClassName("map-view").innerHTML = "<iframe allowfullscreen='' class='map' frameborder='0' src='https://www.google.com/maps/embed/v1/place?q=place_id:ChIJIUideQ7JlzMRrYc5w5uz3-w&amp;key=AIzaSyBEjmwyQE3AT9_JFXimNOvTlYVa9WSxgds' style='border:0'></iframe>";
